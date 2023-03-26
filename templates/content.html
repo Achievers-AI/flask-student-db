@@ -3,41 +3,75 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-
-        <div class="col-md-6">
+    <div style="width:600px;margin-inline:auto;text-align: center;">
+        <h1>Welcome</h1>  
+    </div>
+    <div style="width:600px;margin-inline:auto;">
+        <div>
             <div class="card">
-                <div class="card-body1">
+                <h2 style="text-align: center;">Student Details</h2>
+                <div class="card-body1" style="padding: 10px 30px;">
                     <form action='/data/create' method = "POST">
-                        <p>Student ID <input type = "integer" name = "student_id" /></p>
-                        <p>First name <input type = "text" name = "fname" /></p>
-                        <p>Last name <input type = "text" name = "lname" /></p>
-                        <p>Date of birth <input type = "date" name = "dob" /></p>
-                        <p>Amount due <input type = "number" name = "amtdue" /></p>
-                      <button class="btn btn-primary" type="submit">
-                        Insert New Student
-                    </button>
+                        <table>
+                            <tr>
+                                <td width="50%"><label for="student_id">Student ID</label> </td>
+                                <td width="50%"><input type = "integer" name = "student_id" /><br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="fname">First name</label></td>
+                                <td><input type = "text" name = "fname" /><br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="lname">Last name</label></td>
+                                <td><input type = "text" name = "lname" /><br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="dob">Date of birth</label></td>
+                                <td><input type = "date" name = "dob" /><br></td>
+                            </tr>
+                            <tr>
+                                <td><label for="amtdue">Amount due</label></td>
+                                <td><input type = "number" name = "amtdue" /><br></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <center>
+                            <button class="btn btn-primary" type="submit">
+                                Insert New Student
+                            </button>
+                        </center>
                 </form>
                 </div>
-                <div class="card-body2">
+            </div>
+            <br>
+            <div class="card">
+                <div class="card-body3" style="padding: 10px 30px;">
+                    <form action="/getstudentbyId" method="post">
+                        <table>
+                            <tr>
+                                <td width="30%"><label for="id">Student ID</label> </td>
+                                <td width="30%"><input type="integer" name="id" placeholder="Id" required></td>
+                                <td width="40%" align="center">
+                                    <button class="btn btn-primary" type="submit">Fetch student by Id</button>
+                                </td>
+                            </tr>
+                        </table>                        
+                    </form>
+                </div>
+                <div class="card-body2" style="padding: 10px 30px;" align="center">
                     <form action="/data" method="post">
                         <button class="btn btn-primary" type="submit">
                             Fetch all student records
                         </button>
                     </form>
                 </div>
-                <div class="card-body3">
-                    <form action="/getstudentbyId" method="post">
-                        <input type="integer" name="id" placeholder="Id" required>
-                        <button class="btn btn-primary" type="submit">
-                            Fetch student by Id
-                        </button>
-                    </form>
-                </div>
             </div>
+            
         </div>
-
-        <div class="col-md-6">
+    </div>
+    </br>
+    <div>
+        <div>
             <table class="table table-bordered table-hover">
                 <thead>
                 <tr>
